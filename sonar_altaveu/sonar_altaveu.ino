@@ -19,19 +19,25 @@ void loop() {
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
   duration = pulseIn(echoPin, HIGH);
-  // calculem la distància en funció del temps que ha trigat entre trog i echo
+  // calculem la distància en funció del temps que ha trigat entre trig i echo
   distance = (duration/2) / 29.1;
  // fem sonar un so o un altre en funció de la distància
   if(distance < 30){
     digitalWrite(led, HIGH);
-    sound = 250;
+    tone(3, 250);
+    delay(100);
+    tone(3, 0);
   }
   if(distance < 20){
     digitalWrite(led, HIGH);
-    sound = 260;
+    tone(3, 260);
+    delay(100);
+    tone(3, 0);
   }
   if(distance < 10){
     digitalWrite(led, HIGH);
-    sound = 290;
+    tone(3, 290);
+    delay(100);
+    tone(3, 0);
   }
 }
